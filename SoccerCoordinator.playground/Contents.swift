@@ -28,7 +28,7 @@
  var teamRaptors: [Dictionary<String, Any>] = []
 
  var experienced = [[String: Any]]()
- var unexperienced = [[String: Any]]()
+ var inexperienced = [[String: Any]]()
  
  
  for player in players{
@@ -40,7 +40,7 @@
         {
             experienced.append(player)
                     }else{
-            unexperienced.append(player)
+            inexperienced.append(player)
             }
     }
  
@@ -59,7 +59,7 @@
     }
  }
  var counter02 = 0
- for player in unexperienced {
+ for player in inexperienced {
     counter02 += 1
     var remainder02 = counter02 % 3
     switch remainder02 {
@@ -72,9 +72,15 @@
     default: break
     }
  }
- print(teamSharks)
- print(teamDragons)
- print(teamRaptors)
+ for player in teamSharks {
+    print(player)
+ }
+ for player in teamDragons {
+    print(player)
+ }
+ for player in teamRaptors {
+    print(player)
+ }
 
  // Letters
  
@@ -97,7 +103,9 @@
     var letterRaptors: String = "dear \(guardian), your child \(names) is in teamRaptors and will practice the first game on March 17th,at 3 pm."
     letters.append(letterRaptors)
  }
-print(letters)
+ for letter in letters {
+    print(letter)
+ }
  
  // Extra Credit
  
@@ -105,31 +113,5 @@ print(letters)
  
  //team average height
  
- var SharksTotalHeight = 0
- for player in teamSharks {
-    var height = player["height"] as! Int
-    SharksTotalHeight += height
- }
- let SharkAvgHeight = SharksTotalHeight / teamSharks.count
+// How to sort the collections? and how to pick the top 1/3 of the collections?
  
- var DragonsTotalHeight = 0
- for player in teamDragons {
-    var height = player["height"] as! Int
-    DragonsTotalHeight += height
- }
- let DragonsAvgHeight = DragonsTotalHeight / teamDragons.count
- 
- var RaptorsTotalHeight = 0
- for player in teamRaptors {
-    var height = player["height"] as! Int
-    RaptorsTotalHeight += height
- }
- let RaptorsAvgHeight = RaptorsTotalHeight / teamRaptors.count
- 
-print(SharkAvgHeight)
-print(DragonsAvgHeight)
-print(RaptorsAvgHeight)
- 
-// the only problem is that teamDragons's average - teamRaptors's average = 2 > 1.5, so, what about switch
- // i need some hits for the extra credit please.
-   
